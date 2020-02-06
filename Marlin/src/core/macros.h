@@ -55,14 +55,15 @@
 #define _O1          __attribute__((optimize("O1")))
 #define _O2          __attribute__((optimize("O2")))
 #define _O3          __attribute__((optimize("O3")))
-
-#ifndef UNUSED
+  
+/* disabling this removes a few of the ton of warnings. same macro already defined in the STM32 HAL */
+/*#ifndef UNUSED
   #if defined(ARDUINO_ARCH_STM32) && !defined(STM32GENERIC)
     #define UNUSED(X) (void)X
   #else
     #define UNUSED(x) ((void)(x))
   #endif
-#endif
+#endif*/
 
 // Clock speed factors
 #if !defined(CYCLES_PER_MICROSECOND) && !defined(__STM32F1__)
